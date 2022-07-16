@@ -4,18 +4,34 @@
     right: 0;
 
     margin: 0 auto;
-    padding: 1rem;
+    padding: 15px;
 
-    height: 250px;
     width: 500px;
 
     background-color: white;
     border: 1px solid #7a7a7a;
 
-    display: flex;
-    flex-direction: column;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .modal .modal-header {
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #7a7a7a;
+
+    margin-bottom: 1em;
+    padding-bottom: 5px;
+}
+
+.modal .modal-header .modal-close {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+.modal .modal-header .modal-close img {
+    height: 25px;
+    width: 25px;
 }

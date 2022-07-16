@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import './App.css';
 import Modal from './components/Modal';
+
+import './App.css';
 
 function App() {
     const [showModal, setShowModal] = useState(false);
@@ -8,8 +9,8 @@ function App() {
     return (
         <div className="App">
             {showModal && (
-                <Modal onClose={() => setShowModal(false)}>
-                    <h2>Hello from modal!</h2>
+                <Modal title="Hello from Modal" onClose={() => setShowModal(false)}>
+                    <p>This is a cool modal!</p>
                 </Modal>
             )}
             <h1>React modal challenge</h1>
