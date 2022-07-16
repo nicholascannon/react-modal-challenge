@@ -2,6 +2,7 @@
     position: absolute;
     left: 0;
     right: 0;
+    z-index: 999;
 
     margin: 0 auto;
     padding: 15px;
@@ -34,4 +35,16 @@
 .modal .modal-header .modal-close img {
     height: 25px;
     width: 25px;
+}
+
+.modal-blur {
+    position: absolute;
+    z-index: 998;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(1px);
 }
