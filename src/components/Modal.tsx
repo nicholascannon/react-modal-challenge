@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import './Modal.css';
 
 type PropTypes = {
@@ -7,6 +8,16 @@ type PropTypes = {
 };
 
 const Modal: React.FC<PropTypes> = ({ children, title, onClose }) => {
+    useEffect(() => {
+        const closeOnEscape = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                onClose();
+            }
+        };
+        document.addEventListener('keydown', closeOnEscape, false);
+        return () => document.removeEventListener('keydown', closeOnEscape, false);
+    });
+
     return (
         <div className="modal">
             <div className="modal-header">
