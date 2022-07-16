@@ -1,18 +1,12 @@
-import { useState } from 'react';
-import Modal from './components/Modal';
-
+import { useContext } from 'react';
 import './App.css';
+import { ModalContext } from './components/Modal/ModalController';
 
 function App() {
-    const [showModal, setShowModal] = useState(false);
+    const { setShowModal } = useContext(ModalContext);
 
     return (
         <div className="App">
-            {showModal && (
-                <Modal title="Hello from Modal" onClose={() => setShowModal(false)}>
-                    <p>This is a cool modal!</p>
-                </Modal>
-            )}
             <h1>React modal challenge</h1>
 
             <button onClick={() => setShowModal(true)}>Show modal</button>

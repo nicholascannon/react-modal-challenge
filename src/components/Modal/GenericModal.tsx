@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import useOutSideClick from '../hooks/useOutSideClick';
-import './Modal.css';
+import useOutSideClick from '../../hooks/useOutSideClick';
+import './GenericModal.css';
 
 type PropTypes = {
     children: React.ReactNode;
@@ -8,7 +8,7 @@ type PropTypes = {
     onClose: () => unknown;
 };
 
-const Modal: React.FC<PropTypes> = ({ children, title, onClose }) => {
+const GenericModal: React.FC<PropTypes> = ({ children, title, onClose }) => {
     useEffect(() => {
         const closeOnEscape = (event: KeyboardEvent) => {
             if (event.key === 'Escape') {
@@ -39,4 +39,4 @@ const Modal: React.FC<PropTypes> = ({ children, title, onClose }) => {
     );
 };
 
-export default Modal;
+export default GenericModal;
