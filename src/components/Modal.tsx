@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import useOutSideClick from '../hooks/useOutSideClick';
 import './Modal.css';
 
 type PropTypes = {
@@ -18,10 +19,14 @@ const Modal: React.FC<PropTypes> = ({ children, title, onClose }) => {
         return () => document.removeEventListener('keydown', closeOnEscape, false);
     });
 
+    const modalRef = useRef(null);
+    useOutSideClick(modalRef, onClose);
+
     return (
         <>
             <div className="modal-blur fade-in" />
-            <div className="modal fade-in">
+
+            <div ref={modalRef} className="modal fade-in">
                 <div className="modal-header">
                     <h2>{title}</h2>
                     <button className="modal-close" onClick={onClose}>
